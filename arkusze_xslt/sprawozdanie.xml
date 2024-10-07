@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="klucz.xsl" type="text/xsl"?>
+<sprawozdanie rodzaj='roczne'>
+    <autorzy liczba_autorow='2'>
+        <autor miejsce='pierwszy'>
+            <obraz url='231.199.99.10/ob1.jpg' />
+            <imie>Anna</imie>
+            <nazwisko>Kot</nazwisko>
+        </autor>
+
+        <autor miejsce='drugi'>
+            <obraz url='231.199.99.10/ob2.jpg' />
+            <imie>Jan</imie>
+            <nazwisko>Nowak</nazwisko>
+        </autor>
+
+    </autorzy>
+    <tytul>
+        Zestawienie zysków i strat 2022 rok
+    </tytul>
+
+    <dane>
+        <pozycja waluta='PLN' okres='kwartał' typ_danych='zysk'>
+            <nr_okresu>1</nr_okresu>
+            <wartosc>2234580</wartosc>
+        </pozycja>
+        <pozycja okres='kwartał' typ_danych='zysk'>
+            <nr_okresu>2</nr_okresu>
+            <wartosc>2234570</wartosc>
+        </pozycja>
+        <pozycja waluta='PLN' okres='miesiąc' typ_danych='obrót'>
+            <nr_okresu>7</nr_okresu>
+            <wartosc>15340000</wartosc>
+        </pozycja>
+        <pozycja waluta='PLN' okres='kwartał' typ_danych='obrót'>
+            <nr_okresu>67</nr_okresu>
+            <wartosc>6425453</wartosc>
+        </pozycja>
+    </dane>
+
+</sprawozdanie>
