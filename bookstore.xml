@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- to jest kometarz XML -->
+ <ksiegarnia>
+
+    <!-- definicja książki z atrybutami -->
+     <ksiazka id="1" jezyk="Angielski">
+        <tytul>Wprowadzenie do XML</tytul>
+        <autor>
+            <imie>Jan</imie>
+            <nazwisko>Kowalski</nazwisko>
+        </autor>
+        <rok>2022</rok>
+        <cena waluta="USD">29.99</cena>
+     </ksiazka>
+
+     <!-- definicja drugiej książki z atrybutami -->
+     <ksiazka id="2" jezyk="Polski">
+        <tytul>Wstęp do języka Python</tytul>
+        <autor>
+            <imie>Anna</imie>
+            <nazwisko>Kownacka</nazwisko>
+        </autor>
+        <rok>2023</rok>
+        <cena waluta="PLN">55</cena>
+     </ksiazka>
+
+     <czasopismo id="3" jezyk="Polski">
+        <tytul>Uczenie maszynowe w modelach językowych</tytul>
+        <numer>12</numer>
+        <rok>2023</rok>
+     </czasopismo>
+
+     <czasopismo id="4" jezyk="Angielski">
+        <tytul>Game Theory</tytul>
+        <numer>3</numer>
+        <rok>2024</rok>
+     </czasopismo>
+ </ksiegarnia>
