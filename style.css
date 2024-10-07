@@ -1,0 +1,78 @@
+/* Stylizacja dla całego dokumentu XML */
+ksiegarnia {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Stylizacja dla książek */
+ksiazka {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+/* Tytuł książki */
+tytul {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Stylizacja dla autora */
+autor {
+    margin-bottom: 10px;
+}
+
+autor imie, autor nazwisko {
+    font-style: italic;
+}
+
+/* Rok wydania */
+rok {
+    color: #7f8c8d;
+}
+
+/* Cena książki */
+cena {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+cena[waluta="USD"]::before {
+    content: "$";
+}
+
+cena[waluta="PLN"]::before {
+    content: "PLN ";
+}
+
+/* Stylizacja dla czasopism */
+czasopismo {
+    border: 1px dashed #95a5a6;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ecf0f1;
+}
+
+czasopismo tytul {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #16a085;
+}
+
+czasopismo numer {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+/* Stylizacja dla całego dokumentu XML */
+ksiegarnia {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
