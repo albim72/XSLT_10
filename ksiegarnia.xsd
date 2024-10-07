@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!-- Główny element: ksiegarnia -->
+    <xs:element name="ksiegarnia">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Elementy ksiazka i czasopismo -->
+                <xs:element name="ksiazka" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tytul" type="xs:string" />
+                            <xs:element name="autor">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="imie" type="xs:string" />
+                                        <xs:element name="nazwisko" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="rok" type="xs:gYear" />
+                            <xs:element name="cena">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:decimal">
+                                            <xs:attribute name="waluta" type="xs:string" use="required" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:positiveInteger" use="required" />
+                        <xs:attribute name="jezyk" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="czasopismo" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tytul" type="xs:string" />
+                            <xs:element name="numer" type="xs:positiveInteger" />
+                            <xs:element name="rok" type="xs:gYear" />
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:positiveInteger" use="required" />
+                        <xs:attribute name="jezyk" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
