@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+    <xsl:output method="xml" indent="yes"/>
+    
+    <!-- Główna struktura dokumentu -->
+    <xsl:template match="/">
+        <fo:root>
+            <!-- Ustawienia strony -->
+            <fo:layout-master-set>
+                <fo:simple-page-master master-name="my-page" page-height="29.7cm" page-width="21cm" margin="2cm">
+                    <fo:region-body margin="1cm"/>
+                    <fo:region-before extent="1cm"/>
+                    <fo:region-after extent="1cm"/>
+                </fo:simple-page-master>
+            </fo:layout-master-set>
+
+            <!-- Główna strona -->
+            <fo:page-sequence master-reference="my-page">
+                <fo:flow flow-name="xsl-region-body">
+                    <!-- Nagłówek dokumentu -->
+                    <fo:block font-size="14pt" font-weight="bold" text-align="center" space-after="10pt">
+                        Sprawozdanie - Zestawienie Okresów i Kwot
+                    </fo:block>
+                    
+                    <!-- Tabela -->
+                    <fo:table table-layout="fixed" width="100%" border="solid 1pt black">
+                        <fo:table-column column-width="25%"/>
+                        <fo:table-column column-width="25%"/>
+                        <fo:table-column column-width="25%"/>
+                        <fo:table-column column-width="25%"/>
+                        
+                        <!-- Nagłówki tabeli -->
+                        <fo:table-header>
+                            <fo:table-row>
+                                <fo:table-cell border="solid 1pt black" padding="2pt">
+                                    <fo:block font-weight="bold">Nr Okresu</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border="solid 1pt black" padding="2pt">
+                                    <fo:block font-weight="bold">Wartość</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border="solid 1pt black" padding="2pt">
+                                    <fo:block font-weight="bold">Waluta</fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border="solid 1pt black" padding="2pt">
+                                    <fo:block font-weight="bold">Okres</fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </fo:table-header>
+
+                        <!-- Wiersze z danymi -->
+                        <fo:table-body>
+                            <xsl:for-each select="//pozycja">
+                                <fo:table-row>
+                                    <fo:table-cell border="solid 1pt black" padding="2pt">
+                                        <fo:block><xsl:value-of select="nr_okresu"/></fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell border="solid 1pt black" padding="2pt">
+                                        <fo:block><xsl:value-of select="wartosc"/></fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell border="solid 1pt black" padding="2pt">
+                                        <fo:block><xsl:value-of select="@waluta"/></fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell border="solid 1pt black" padding="2pt">
+                                        <fo:block><xsl:value-of select="@okres"/></fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                            </xsl:for-each>
+                        </fo:table-body>
+                    </fo:table>
+                </fo:flow>
+            </fo:page-sequence>
+        </fo:root>
+    </xsl:template>
+
+</xsl:stylesheet>
