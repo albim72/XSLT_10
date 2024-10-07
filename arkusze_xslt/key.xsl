@@ -18,7 +18,7 @@
             <xsl:text>  </xsl:text>
             <xsl:value-of select="nazwisko"></xsl:value-of>
             <br/>
-            <xsl:for-each select="key('index_okres','miesiąc')">
+            <xsl:for-each select="key('indeks_okres','miesiąc')">
                 OKRES: <xsl:value-of select="nr_okresu" /><br/>
                 KWOTA: <xsl:value-of select="wartosc" /><br/>
             </xsl:for-each>
