@@ -1,0 +1,40 @@
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version="2.0">
+  <xsl:output method="html"/>
+
+  <xsl:template match="/">
+    <html>
+        <head></head>
+        <body>
+            <xsl:apply-templates select="//dane" />
+
+        </body>
+    </html>
+
+  </xsl:template>
+
+  <xsl:template match="dane">
+    <xsl:for-each select="pozycja">
+        <xsl:choose>
+            <xsl:when test="@okres='miesiąc'">
+                <b>DANE MIESIĘCZNE</b>
+            </xsl:when>
+            <xsl:when test="@okres='kwartał'">
+                <b>DANE KWARTALNE</b>
+            </xsl:when>
+            <xsl:when test="@okres='półroku'">
+                <b>DANE PÓŁROCZNE</b>
+            </xsl:when>
+            <xsl:when test="@okres='rok'">
+                <b>DANE ROCZNE</b>
+            </xsl:when>
+            <xsl:otherwise>
+                <b>NIEZDEFINIOWANY OKRES!</b>
+            </xsl:otherwise>
+        </xsl:choose>
+        <br />
+        OKRES: <xsl:value-of select="nr_okresu" /><br />
+        KWOTA: <xsl:value-of select="wartosc" /><br />
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>
